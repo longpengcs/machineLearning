@@ -1,0 +1,61 @@
+Namespace(eta=0.3, lamda=0.0, mx=1073741824, potchs=20, size=20)
+accomplish 0 epoch:
+successful rate in valid set 8857/10000 = 88.57%
+successful rate in training set 43711/50000 = 87.42%
+accomplish 1 epoch:
+successful rate in valid set 8978/10000 = 89.78%
+successful rate in training set 44500/50000 = 89.00%
+accomplish 2 epoch:
+successful rate in valid set 9017/10000 = 90.17%
+successful rate in training set 44822/50000 = 89.64%
+accomplish 3 epoch:
+successful rate in valid set 9037/10000 = 90.37%
+successful rate in training set 45058/50000 = 90.12%
+accomplish 4 epoch:
+successful rate in valid set 9065/10000 = 90.65%
+successful rate in training set 45218/50000 = 90.44%
+accomplish 5 epoch:
+successful rate in valid set 9089/10000 = 90.89%
+successful rate in training set 45345/50000 = 90.69%
+accomplish 6 epoch:
+successful rate in valid set 9106/10000 = 91.06%
+successful rate in training set 45456/50000 = 90.91%
+accomplish 7 epoch:
+successful rate in valid set 9109/10000 = 91.09%
+successful rate in training set 45538/50000 = 91.08%
+accomplish 8 epoch:
+successful rate in valid set 9122/10000 = 91.22%
+successful rate in training set 45589/50000 = 91.18%
+accomplish 9 epoch:
+successful rate in valid set 9127/10000 = 91.27%
+successful rate in training set 45652/50000 = 91.30%
+accomplish 10 epoch:
+successful rate in valid set 9136/10000 = 91.36%
+successful rate in training set 45719/50000 = 91.44%
+accomplish 11 epoch:
+successful rate in valid set 9140/10000 = 91.40%
+successful rate in training set 45771/50000 = 91.54%
+accomplish 12 epoch:
+successful rate in valid set 9140/10000 = 91.40%
+successful rate in training set 45803/50000 = 91.61%
+accomplish 13 epoch:
+successful rate in valid set 9145/10000 = 91.45%
+successful rate in training set 45831/50000 = 91.66%
+accomplish 14 epoch:
+successful rate in valid set 9150/10000 = 91.50%
+successful rate in training set 45870/50000 = 91.74%
+accomplish 15 epoch:
+successful rate in valid set 9151/10000 = 91.51%
+successful rate in training set 45900/50000 = 91.80%
+accomplish 16 epoch:
+successful rate in valid set 9157/10000 = 91.57%
+successful rate in training set 45918/50000 = 91.84%
+accomplish 17 epoch:
+successful rate in valid set 9159/10000 = 91.59%
+successful rate in training set 45929/50000 = 91.86%
+accomplish 18 epoch:
+successful rate in valid set 9162/10000 = 91.62%
+successful rate in training set 45958/50000 = 91.92%
+accomplish 19 epoch:
+successful rate in valid set 9167/10000 = 91.67%
+successful rate in training set 45981/50000 = 91.96%

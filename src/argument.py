@@ -12,6 +12,11 @@ def getArgment():
   argment.add_argument('-p','--potchs',dest='potchs',default=5,help='how much times we will training.')
   argment.add_argument('-s','--size',dest='size',default=10,help='SGD mini batch size.')
   argment = argment.parse_args()
+  argment.eta = float(argment.eta)
+  argment.lamda = float(argment.lamda)
+  argment.mx = int(argment.mx)
+  argment.potchs = int(argment.potchs)
+  argment.size = int(argment.size)
   return argment
 
 if __name__ == '__main__':
