@@ -1,0 +1,17 @@
+#generality module
+argument.py ==> get commend line arguments
+generateData.py ==> random generate a data set.
+loadMnist.py  ==> load data set mnist.
+
+#logistic Regression
+logisticRegression.log  ==> some result of logisticRegression.
+logisticRegression.py  ==> multi version of logistic Regression.
+logisticRegression2.log ==> some result of logisticRegression2.
+logisticRegression2.py ==> binary logistic Regression.
+logisticRegressionSCI.log
+logisticRegressionSCI.py ==> using scikit-learn.
+
+#support vector mechine
+svm.py ==> SMO version(select i and j).
+svmEasy.py ==> random version.
+svmSCI.py ==> using scikit-learn.
