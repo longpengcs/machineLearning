@@ -1,49 +1,47 @@
 """
-a pratice KNN program.
-data set and algorithm come from book machine learning in action.
+a general and strong KNN algorithm.
 """
+
 from collections import Counter as cc
 import numpy as np
 from sklearn.metrics import classification_report as report
+
 class knn(object):
-  def __init__(self,data,k):
-    #init data set and k
-    self.data,self.k = data,k
-  def __predict(self,x):
-    #calculate Euler distance (a - b)**2
-    delta = x - self.x
-    delta = np.sum(delta**2,axis=1)
-    #sort and select k sample in the front.
-    index = delta.argsort()[:self.k]
-    y = self.y[index]
-    #select the class which has max frequeuce.
-    count = cc(y)
-    return max(count.items(),key=lambda x:x[1])[0]
-  def test(self,r):
-    #random select r*data.size() data set to be training set.
-    #the others is test set.
-    np.random.shuffle(self.data)
-    mx = int(r*len(self.data))
-    x,y = self.data[:,:3],self.data[:,3]
-    x = self.normalize(x)
-    self.x,self.y,tx,ty = x[:mx],y[:mx],x[mx:],y[mx:]
-    y = ty.copy()
-    for n,m in enumerate(tx):
-      y[n] = self.__predict(m)
-    print report(y,ty)
-    y -= ty
-    #if r is nonzero,it is a wrong prediction.
-    r = np.nonzero(y)[0]
-    print 'fail rate is %d/%d = %.2f%%' %(len(r),len(y),len(r)*100.0/len(y))
+  def __init__(self,x,y):
+  #some init operator,such as normalization.
+    self.x,self.mi,self.delta = self.normalize(x)
+    self.y = y
   def normalize(self,x):
-    #normalize feature to 0~1
+  #normalize feature space to 0~1
     mx = x.max(0)
     mi = x.min(0)
     x -= mi
-    x /= (mx - mi)
-    return x
+    delta = mx - mi
+  #in some feature space,max == min,this is a invalid feature.
+    delta[delta == 0] = 1
+    x /= delta
+    return x,mi,delta
+  def predict(self,x,k):
+    #normalize x
+    x -= self.mi
+    x /= self.delta
+    delta2 = np.sum((x - self.x)**2,axis=1)
+    index = delta2.argsort()[:k]
+    cls = cc(self.y[index])
+    return max(cls.items(),key=lambda x:x[1])[0]
+  def test(self,tx,ty,k):
+    y = np.array([-1.0 for _ in ty])
+    for n,m in enumerate(tx):
+      y[n] = self.predict(m,k)
+    print report(y,ty)
+    y -= ty
+    r = np.nonzero(y)[0]
+    print 'fail rate: %d/%d = %.2f' %(len(r),len(y),len(r)*100.0/len(y))
 
 if __name__ == '__main__':
-  data = np.loadtxt('../data/datingTestSet2.txt')
-  sol = knn(data,20)
-  sol.test(0.9)
+  import loadMnist,argument
+  arg = argument.getArgument()
+  mnist = loadMnist.mnist()
+  train,valid,test = mnist.getNumber(10,True,arg.mx)
+  sol = knn(train[0],train[1])
+  sol.test(valid[0][:1000],valid[1][:1000],arg.knn)

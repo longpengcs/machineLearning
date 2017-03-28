@@ -12,6 +12,7 @@ def getArgument():
   argument.add_argument('-p','--potchs',dest='potchs',default=5,help='how much times we will training.')
   argument.add_argument('-s','--size',dest='size',default=10,help='SGD mini batch size.')
   argument.add_argument('-b','--bias',dest='bias',default=0.001,help='SGD mini batch size.')
+  argument.add_argument('-k','--knn',dest='knn',default=10,help='KNN k top argument.')
   argument = argument.parse_args()
   argument.eta = float(argument.eta)
   argument.lamda = float(argument.lamda)
@@ -19,8 +20,8 @@ def getArgument():
   argument.potchs = int(argument.potchs)
   argument.size = int(argument.size)
   argument.bias = float(argument.bias)
+  argument.knn = int(argument.knn)
   return argument
-
 if __name__ == '__main__':
   arg = getArgment()
   print arg
