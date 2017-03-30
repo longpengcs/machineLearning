@@ -42,7 +42,8 @@ class logisticRegression(object):
     for m in xrange(epochs):
       for n in xrange(0,self.train_max,size):
         self.train(self.train_x[n:n+size],self.train_y[n:n+size])
-      print 'accomplish %d epoch:' %(m)
+      if __name__ == '__main__':
+        print 'accomplish %d epoch:' %(m)
       if test:
         succ = self.successful(self.prediction(self.test_x),self.test_y)
         print 'successful rate in valid set {}/{} = {:.2f}%'.format(succ,
@@ -55,7 +56,7 @@ class logisticRegression(object):
     return len(pred) - np.sum((pred ^ real) > 0)
 
 if __name__ == '__main__':
-  arg = argument.getArgment()
+  arg = argument.getArgument()
   mnist = loadMnist.mnist()
   train,valid,test = mnist.getNumber(10,ranges=True)
   eta,lamda,potchs,size,mx = arg.eta,arg.lamda,arg.potchs,arg.size,arg.mx

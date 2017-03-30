@@ -1,0 +1,12 @@
+the 0 batch over.
+fail rate: 1/2055 = 0.05%
+the 1 batch over.
+fail rate: 3/2055 = 0.15%
+the 2 batch over.
+fail rate: 2/2055 = 0.10%
+the 3 batch over.
+fail rate: 1/2055 = 0.05%
+the 4 batch over.
+fail rate: 1/2055 = 0.05%
+
+the result is very nice,but the y just be 0 or 1.
