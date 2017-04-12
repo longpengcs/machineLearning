@@ -49,3 +49,4 @@ if __name__ == '__main__':
   ty[ty==0] = -1
   sol = perceptron(train)
   sol.train(0.3,5,valid)
+  print report(sol.predict(valid[0]),valid[1])
